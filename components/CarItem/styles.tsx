@@ -1,6 +1,6 @@
 import {StyleSheet} from "react-native";
 const styles = StyleSheet.create({
-    carContainer: {
+    container: {
       height: '100%',
       width: '100%',
       alignItems: "center",
@@ -20,6 +20,12 @@ const styles = StyleSheet.create({
       height: '100%',
       width: '100%',
       resizeMode:"cover",
+    },
+    buttonContainer:{
+      position:"absolute",
+      width: '100%',
+      bottom:50,
+
     }
   });
   
