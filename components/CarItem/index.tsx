@@ -4,14 +4,18 @@ import StyledButton from "../StyledButton";
 import styles from "./styles";
 
 const CarItem = (props: any) => {
+  const {name, subTitle, subTitleExtra, image} = props;
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={require("../../assets/images/ModelS.jpeg")}
+        source={image}
         style={styles.image}
       />
-      <Text style={styles.title}>Model S</Text>
-      <Text style={styles.subTitle}>Starting at $69,420</Text>
+      <Text style={styles.title}>{name}</Text>
+      <Text style={styles.subTitle}>{subTitle}{" "}
+      <Text style={styles.subTitleExtra}>{subTitleExtra}</Text>
+      </Text>
+
 
       <View style={styles.buttonContainer}>
         <StyledButton
