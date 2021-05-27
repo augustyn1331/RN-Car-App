@@ -1,7 +1,7 @@
-import {StyleSheet} from "react-native";
+import {StyleSheet, Dimensions} from "react-native";
 const styles = StyleSheet.create({
     container: {
-      height: '100%',
+      height: Dimensions.get("window").height,
       width: '100%',
       alignItems: "center",
     },
@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
       fontWeight: "500",
       fontSize: 40,
       marginTop:"30%",
-      color: "#393c41"
+      color: "#202020"
     },
     subTitle:{
       fontSize: 16,
