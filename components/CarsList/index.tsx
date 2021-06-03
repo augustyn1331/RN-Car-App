@@ -1,21 +1,27 @@
-import React from "react";
-import { Text, View, FlatList, Dimensions } from "react-native";
+import React, { useCallback } from "react";
+import { View, FlatList, Dimensions, ListRenderItem } from "react-native";
 import styles from "./styles";
 import cars from "./cars";
+import { ICar } from "./cars";
 import CarItem from "../CarItem";
 
 const CarsList = () => {
-  console.log(cars);
+  const renderItem: ListRenderItem<ICar> = useCallback(
+    ({ item }) => <CarItem car={item} />,
+    []
+  );
+  const keyExtractor = useCallback((item: ICar) => item.id.toString(), []);
+  const height = Dimensions.get("window").height;
   return (
     <View style={styles.container}>
-      <FlatList
+      <FlatList<ICar>
         data={cars}
-        renderItem={({ item }) => <CarItem car={item} />}
+        renderItem={renderItem}
         showsVerticalScrollIndicator={false}
         snapToAlignment={"start"}
         decelerationRate={"fast"}
-        snapToInterval={Dimensions.get("window").height}
-        keyExtractor={(item) => item.id}
+        snapToInterval={height}
+        keyExtractor={keyExtractor}
       />
     </View>
   );
